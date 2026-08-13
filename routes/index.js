@@ -5,8 +5,12 @@ router.get('/', (req, res) => {
   res.send('Welcome to the Gym Management API!');
 });
 
+// Swagger documentation route
+router.use('/', require('./swagger'));
+
 // Link the classes routes
 router.use('/classes', require('./classes'));
+router.use('/memberships', require('./memberships'));
 
 module.exports = router;
 
