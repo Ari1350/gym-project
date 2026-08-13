@@ -6,8 +6,8 @@ const doc = {
     description: 'Final Project - Part 1. Contains Classes and Memberships collections with full CRUD capabilities.'
   },
   // Tu URL local para pruebas. Al desplegar a Render cambiaremos esto o usaremos variables.
-  host: 'localhost:8080', 
-  schemes: ['http', 'https'],
+  host: 'gym-project-948y.onrender.com', 
+  schemes: ['https'],
   definitions: {
     Class: {
       name: "Zumba Fitness",

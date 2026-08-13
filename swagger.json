@@ -5,10 +5,9 @@
     "description": "Final Project - Part 1. Contains Classes and Memberships collections with full CRUD capabilities.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "gym-project-948y.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
