@@ -14,6 +14,8 @@ router.use('/', require('./swagger'));
 // Link the classes routes
 router.use('/classes', require('./classes'));
 router.use('/memberships', require('./memberships'));
+router.use('/trainers', require('./trainers'));
+router.use('/equipment', require('./equipment'));
 
 module.exports = router;
 

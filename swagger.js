@@ -3,7 +3,7 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'Gym Management API',
-    description: 'Final Project - Part 1. Contains Classes and Memberships collections with full CRUD capabilities.'
+    description: 'Final Project - Part 2. Full CRUD for Classes, Memberships, Trainers, and Equipment with OAuth protection.'
   },
 
   host: 'gym-project-948y.onrender.com', 
@@ -21,6 +21,20 @@ const doc = {
       lastName: "Smith",
       email: "janesmith@example.com",
       planType: "Monthly",
+      status: "active"
+    },
+    Trainer: {
+      firstName: "David",
+      lastName: "Miller",
+      specialty: "Bodybuilding",
+      phone: "555-0199",
+      status: "active"
+    },
+    Equipment: {
+      itemName: "Treadmill Professional",
+      area: "Cardio",
+      quantity: 5,
+      condition: "good",
       status: "active"
     }
   }

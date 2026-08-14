@@ -1,10 +1,10 @@
 const mongodb = require('../config/db');
 const ObjectId = require('mongodb').ObjectId;
 
-// GET /classes 
+// 1. GET /classes 
 const getAllClasses = async (req, res, next) => {
   try {
-    const result = await mongodb.getDb().db().collection('classes').find();
+    const result = await mongodb.getDb().db('gym_project').collection('classes').find();
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists);
@@ -14,14 +14,14 @@ const getAllClasses = async (req, res, next) => {
   }
 };
 
-// GET /classes/:id 
+// 2. GET /classes/:id 
 const getSingleClass = async (req, res, next) => {
   try {
     if (!ObjectId.isValid(req.params.id)) {
       return res.status(400).json({ message: 'Invalid class ID format.' });
     }
     const classId = new ObjectId(req.params.id);
-    const result = await mongodb.getDb().db().collection('classes').find({ _id: classId });
+    const result = await mongodb.getDb().db('gym_project').collection('classes').find({ _id: classId });
     result.toArray().then((lists) => {
       if (lists.length === 0) {
         return res.status(404).json({ message: 'Gym class not found.' });
@@ -34,12 +34,7 @@ const getSingleClass = async (req, res, next) => {
   }
 };
 
-module.exports = {
-  getAllClasses,
-  getSingleClass
-};
-
-// POST /classes (Create a new gym class)
+// 3. POST /classes (Create a new gym class)
 const createClass = async (req, res) => {
   try {
     const newClass = {
@@ -50,7 +45,6 @@ const createClass = async (req, res) => {
       status: req.body.status || 'active'
     };
 
-  
     if (!newClass.name || !newClass.trainer || !newClass.schedule || !newClass.capacity) {
       return res.status(400).json({ message: 'Missing required fields. Please fill all data.' });
     }
@@ -66,7 +60,7 @@ const createClass = async (req, res) => {
   }
 };
 
-// PUT /classes/:id 
+// 4. PUT /classes/:id 
 const updateClass = async (req, res) => {
   try {
     if (!ObjectId.isValid(req.params.id)) {
@@ -92,7 +86,7 @@ const updateClass = async (req, res) => {
   }
 };
 
-// DELETE /classes/:id (Delete a gym class)
+// 5. DELETE /classes/:id (Delete a gym class)
 const deleteClass = async (req, res) => {
   try {
     if (!ObjectId.isValid(req.params.id)) {
