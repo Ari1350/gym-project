@@ -230,9 +230,6 @@
           "404": {
             "description": "Not Found"
           },
-          "422": {
-            "description": "Unprocessable Entity"
-          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -270,6 +267,12 @@
                   "example": "any"
                 },
                 "email": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "birthDate": {
                   "example": "any"
                 },
                 "planType": {
@@ -354,6 +357,12 @@
                 "email": {
                   "example": "any"
                 },
+                "phone": {
+                  "example": "any"
+                },
+                "birthDate": {
+                  "example": "any"
+                },
                 "planType": {
                   "example": "any"
                 },
@@ -407,9 +416,6 @@
           },
           "404": {
             "description": "Not Found"
-          },
-          "422": {
-            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"
@@ -583,9 +589,6 @@
           "404": {
             "description": "Not Found"
           },
-          "422": {
-            "description": "Unprocessable Entity"
-          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -727,6 +730,9 @@
           "404": {
             "description": "Not Found"
           },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -803,9 +809,17 @@
           "type": "string",
           "example": "janesmith@example.com"
         },
+        "phone": {
+          "type": "string",
+          "example": "555-0123"
+        },
+        "birthDate": {
+          "type": "string",
+          "example": "1995-05-20"
+        },
         "planType": {
           "type": "string",
-          "example": "Monthly"
+          "example": "Yearly"
         },
         "status": {
           "type": "string",

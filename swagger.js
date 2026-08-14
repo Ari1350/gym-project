@@ -17,11 +17,13 @@ const doc = {
       status: "active"
     },
     Membership: {
-      firstName: "Jane",
-      lastName: "Smith",
-      email: "janesmith@example.com",
-      planType: "Monthly",
-      status: "active"
+        firstName: "Jane",
+        lastName: "Smith",
+        email: "janesmith@example.com",
+        phone: "555-0123",
+        birthDate: "1995-05-20",
+        planType: "Yearly",
+        status: "active"
     },
     Trainer: {
       firstName: "David",

@@ -41,11 +41,13 @@ const createMember = async (req, res) => {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
-      planType: req.body.planType, // e.g., Monthly, Yearly
-      status: req.body.status || 'active'
+      phone: req.body.phone,         
+      birthDate: req.body.birthDate, 
+      planType: req.body.planType,   
+      status: req.body.status || 'active' 
     };
 
-    if (!newMember.firstName || !newMember.lastName || !newMember.email || !newMember.planType) {
+    if (!newMember.firstName || !newMember.lastName || !newMember.email || !newMember.phone || !newMember.birthDate || !newMember.planType) {
       return res.status(400).json({ message: 'Missing required fields. Please fill all data.' });
     }
 
@@ -71,6 +73,8 @@ const updateMember = async (req, res) => {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
+      phone: req.body.phone,
+      birthDate: req.body.birthDate,
       planType: req.body.planType,
       status: req.body.status
     };
