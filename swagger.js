@@ -5,7 +5,7 @@ const doc = {
     title: 'Gym Management API',
     description: 'Final Project - Part 1. Contains Classes and Memberships collections with full CRUD capabilities.'
   },
-  // Tu URL local para pruebas. Al desplegar a Render cambiaremos esto o usaremos variables.
+
   host: 'gym-project-948y.onrender.com', 
   schemes: ['https'],
   definitions: {
@@ -27,6 +27,6 @@ const doc = {
 };
 
 const outputFile = './swagger.json';
-const endpointsFiles = ['./routes/index.js']; // Apunta al enrutador principal
+const endpointsFiles = ['./routes/index.js']; 
 
 swaggerAutogen(outputFile, endpointsFiles, doc);

@@ -5,6 +5,9 @@ router.get('/', (req, res) => {
   res.send('Welcome to the Gym Management API!');
 });
 
+// Authentication routes 
+router.use('/auth', require('./auth'));
+
 // Swagger documentation route
 router.use('/', require('./swagger'));
 
